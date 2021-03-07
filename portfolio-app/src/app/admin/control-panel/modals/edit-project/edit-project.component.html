@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{project ? project?.name: 'Create Project'}}</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDismiss()">
+        <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <ion-item>
+      <ion-label position="floating">
+        Name
+      </ion-label>
+      <ion-input type="text" [ngModel]="project?.name" name="name" required></ion-input>
+    </ion-item>
+    <ion-item class="input-gap">
+      <ion-label position="floating">
+        Description
+      </ion-label>
+      <ion-input type="text" [ngModel]="project?.description" name="description" required></ion-input>
+    </ion-item>
+    <ion-item class="input-gap">
+      <div style="display: flex; align-items: center;">
+        <ion-label *ngIf="!selectedImage && !project?.imageLink">Image</ion-label>
+        <ion-card class="ion-text-center">
+          <ion-card-header *ngIf="selectedImage || project?.imageLink">
+            <ion-img [src]="!selectedImage ? project?.imageLink : selectedImage"></ion-img>
+          </ion-card-header>
+          <ion-card-content>
+            <input required [disabled]="!!project" type="file" name="image" ngModel (change)="fileChange($event, 'image')">
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-item>
+
+    <ion-item class="input-gap">
+      <div style="display: flex; align-items: center;">
+        <ion-label *ngIf="!selectedVideo && !project?.videoLink">Video</ion-label>
+        <ion-card class="ion-text-center">
+
+          <ion-card-header *ngIf="selectedVideo || project?.videoLink">
+            <video id="videoPlayer" controls style="max-width: 100%; max-height:auto;">
+              <source [src]="!selectedVideo ? project?.videoLink : selectedVideo" type="video/mp4">
+            </video>
+          </ion-card-header>
+          <ion-card-content>
+            <input required [disabled]="!!project" type="file" name="video" ngModel (change)="fileChange($event, 'video')">
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </ion-item>
+    <ion-item class="input-gap">
+      <ion-label position="floating">
+        Technology
+      </ion-label>
+
+      <ion-input type="text" [ngModel]="project?.technology" name="technology" required></ion-input>
+    </ion-item>
+    <ion-item class="input-gap">
+      <ion-label position="floating">
+        Github Link
+      </ion-label>
+      <ion-input type="text" [ngModel]="project?.github" name="github" required></ion-input>
+    </ion-item>
+    <ion-item class="input-gap">
+      <ion-label position="floating">
+        Preview Link
+      </ion-label>
+      <ion-input type="text" [ngModel]="project?.preview" name="preview"></ion-input>
+    </ion-item>
+    <ion-button [disabled]="f.invalid" [color]="project? 'warning': 'primary'" type="submit" expand="block">
+      {{project? 'Edit' : 'Create'}}
+    </ion-button>
+  </form>
+
+</ion-content>

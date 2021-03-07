@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Delete Message</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDismiss()">
+        <ion-icon name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="height: 100%;">
+    <ion-row style="height: 100%; flex-direction: column;" class="ion-justify-content-center">
+      <ion-col style="display: flex; justify-content: center; align-items: center;">
+        <ion-card>
+          <ion-card-content class="message">
+            <ion-item>
+              <ion-text>Name: {{message.name}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>Date: {{message.timestamp}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>Subject: {{message.subject}}</ion-text>
+            </ion-item>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-button color="danger" style="margin-top: 10px;" (click)="onDelete()" expand="block">
+        Delete
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

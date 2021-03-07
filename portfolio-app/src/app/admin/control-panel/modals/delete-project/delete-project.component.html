@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Delete Project</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDismiss()">
+        <ion-icon name="close-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-grid style="height: 100%;">
+    <ion-row style="height: 100%; flex-direction: column;" class="ion-justify-content-center">
+      <ion-col style="display: flex; justify-content: center; align-items: center;">
+
+        <ion-img [src]="project?.imageLink"></ion-img>
+      </ion-col>
+      <ion-button color="danger" style="margin-top: 10px;" (click)="onDelete()" expand="block">
+        Delete
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+</ion-content>

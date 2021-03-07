@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size-sm="10" size-md="8" size-lg="6" class="ion-text-center">
+        <ion-card *ngFor="let message of messages" [style]="{boxShadow: message.status === 'unread' ? '0px 0px 5px #ffca22': ''}">
+          <ion-card-content class="message">
+
+            <ion-item>
+              <ion-text>Name: {{message.name}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>Date: {{message.timestamp | date}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>Subject: {{message.subject}}</ion-text>
+            </ion-item>
+            <ion-item>
+              <ion-text>Message: {{message.body}}</ion-text>
+            </ion-item>
+
+          </ion-card-content>
+          <ion-button fill="clear" (click)="presentMessageOptions(message)">More</ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

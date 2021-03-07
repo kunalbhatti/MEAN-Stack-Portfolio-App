@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{project?.name | titlecase}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button router defaultHref="/portfolio/projects"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid *ngIf="project" style="width: 100%">
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size="12" size-md="6" size-xl="8">
+
+        <ion-item>
+          <ion-label><span style="color: #ffca22;">Nam: </span> {{project?.name}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-text><span style="color: #ffca22;">Description: </span> {{project?.description}}</ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-label><span style="color: #ffca22;">Technology: </span> {{project?.technology}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><span style="color: #ffca22;">Source Code: </span> <a
+              [href]="project?.github">{{project?.github}}</a>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label><span style="color: #ffca22;">Live App: </span> <a
+              [href]="project?.preview">{{project?.preview}}</a>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-row>
+            <ion-col>
+              <ion-text color="warning">Preview:</ion-text>
+            </ion-col>
+            <video id="videoPlayer" controls style="max-width: 100%; height: auto; padding: 5px;">
+              <source [src]="project?.videoLink" type="video/mp4">
+            </video>
+          </ion-row>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size-md="6" size-xl="8" class="ion-text-center">
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
