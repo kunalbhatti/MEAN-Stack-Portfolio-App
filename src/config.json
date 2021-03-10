@@ -1,7 +1,7 @@
 {
-    "encrypt_key": "rx25_98txa@63pqr1fg2",
-    "jwt_key": "ut74@rt5890xc_12ret@w",
-    "mongoDbUri": "mongodb+srv://kunal-bhatti:uSsAJ0EGeEdeuDM1@cluster0.3o6sp.mongodb.net/portfolio?retryWrites=true&w=majority",
-    "api_key": "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",
-    "from": "admin@howtogizmo.com"
+    "encrypt_key": "cryptojs encryption key",
+    "jwt_key": "jwt secret key",
+    "mongoDbUri": "mongodb+srv://",
+    "api_key": "SG.weus_send grid key",
+    "from": "test@test.com"
 }
