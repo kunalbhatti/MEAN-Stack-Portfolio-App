@@ -1,17 +1,24 @@
-Video Link: https://youtu.be/VwE6EzBNlJM
-
 Technology Used: MEAN Stack + Ionic Framework. 
-
 Deployment: Heroku
-
-Inspiration behind the project:
-
-I wanted to build a platform for displaying my development projects.
+Video Link: https://youtu.be/VwE6EzBNlJM
+Inspiration: I wanted to build a platform for displaying development projects.
 
 Features Added:
 
-Manage Projects: The app allows me to create, edit and delete projects. Each project can display information like name, technology used, short description, Github link and preview link. In addition to this each project can have a thumbnail and a video explaining about the project. The videos are uploaded to the server and are directly streamed from the server.
+Project Management: 
+- Give option to view, create, update and delete projects.
+- Each project can display the following information 
+   -- Name 
+   -- Technology Used
+   -- Short Description 
+   -- Github link
+   -- Preview link (Deployment link)
+   -- Thumbnail
+   -- Video
+- Assets are stored on the server. The video is directly streamed from the server
+- The assets are stored as files and not as blob data 
 
-Messaging System: I've added an option for the visitors to contact me directly by sending me a message. Once the message is sent, I can view and reply back directly from the app itself. The app uses SendGrid API for the purpose for mailing.
-
-I never used the this app, because Heroku uses dynos which reset after some time deleting all assets uploaded. The app can be used on a platform that gives storage options along with Node hosting.
+Messaging System: 
+- Give option to send message to the admin from the profile page
+- Create an unread message notification when the admin logs in
+- Admin can reply (using SendGrid API) directly to the sender from the admin panel
